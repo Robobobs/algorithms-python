@@ -1,8 +1,8 @@
-''' binary search tree algorithm '''
+'''Binary search algorithm'''
 from math import floor
 
 def binary_search(list, value):
-    '''binary search algorithm for returning index position of value(s)'''
+    '''Binary search algorithm for returning index position of value(s)'''
     left = 0
     right = len(list) - 1
     indices = []
@@ -15,6 +15,7 @@ def binary_search(list, value):
             prev_idx = middle - 1
             while prev_idx >= 0:
                 prev_value = list[prev_idx]
+                
                 if prev_value == value: # Performs linear search to the left
                     indices.insert(0, prev_idx)
                     prev_idx = prev_idx - 1
@@ -25,6 +26,7 @@ def binary_search(list, value):
             next_idx = middle + 1
             while next_idx <= len(list)-1:
                 next_value = list[next_idx]
+                
                 if next_value == value: # Performs linear search to the right
                     indices.append(next_idx)
                     if next_idx+1 == len(list):
